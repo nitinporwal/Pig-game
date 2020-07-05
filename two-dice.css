@@ -137,6 +137,20 @@ i {
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
 
+.final { 
+    text-align: center;
+    padding: 10px;
+    top: 520px;
+    position: absolute;
+    width: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Lato;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #555;
+}
+
 .dice {
     position: absolute;
     left: 50%;

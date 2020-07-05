@@ -13,6 +13,10 @@ let dice=document.querySelector('.dice');
 
 init();
 
+document.querySelector('.final').addEventListener('change', (event) => {
+    finalScore=event.target.value;
+})
+
 document.querySelector('.btn-roll').addEventListener('click', () => {
     if(play) {
         let rand=Math.floor(Math.random()*6)+1;
@@ -40,7 +44,7 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
     if(play) {
         scores[activePlayer]+=currentScore;
         document.getElementById(`score-${activePlayer}`).textContent = scores[activePlayer];
-        if(scores[activePlayer]>=20) {
+        if(scores[activePlayer]>=finalScore) {
             document.getElementById(`name-${activePlayer}`).textContent = 'Winner!';
             document.querySelector(`.player-${activePlayer}-panel`).classList.remove('active');
             document.querySelector(`.player-${activePlayer}-panel`).classList.add('winner');
@@ -71,6 +75,7 @@ function init() {
     activePlayer=0;
     play=true;
     previous=-1;
+    finalScore=100;
     document.getElementById('score-0').textContent = 0;
     document.getElementById('score-1').textContent = 0;
     document.getElementById('current-0').textContent = 0;
